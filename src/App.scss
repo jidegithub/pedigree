@@ -1,29 +1,11 @@
+//color variables
 $color-black:black;
 $lightcolor-black:rgb(14, 13, 13);
 
+//mixins
 
-.black-txt{
-  color: $color-black;
-}
-.lightblack-txt {
-  color: $lightcolor-black;
-}
-.bold{
-  font-weight: 500;
-}
-.bolder{
-  font-weight: 700;
-}
-.pd-15{
-  padding:15px;
-}
-.pdLR-15{
-  padding: 0 15px;
-}
 
-.mTop-6{
-  margin-top: 6px;
-}
+
 
 /* Set box-sizing to border-box for all elements */
 html {
@@ -135,7 +117,7 @@ noscript {
 
 //color variable, mixin for flexes
 
-.dogImageOrSlider {}
+//.dogImageOrSlider {}
 
 div.dog {
   font-size: 12px;
@@ -143,35 +125,27 @@ div.dog {
   &Image {
     width: 100%;
   }
-
   &Location {
     &-info{
       display: flex;
       justify-content: space-between;
     }
   }
-
   &Bio {
     margin-bottom: 50px;
-
-    &-comment {}
+    //&-comment {}
   }
-
   &Info {
-    // padding: 15px;
-
     &-profile {
       display: flex;
       justify-content: space-between;
     }
-
-    &-identity {
+  &-identity {
       display: flex;
       justify-content: space-between;
       border: 1px solid #f5efe3;
     }
   }
-
   &Ownerprofile {
     display: flex;
     justify-content: space-between;
@@ -195,36 +169,69 @@ button.dogOwnerprofileToggle {
 
 .form-control{
   font-size: 1.5rem;
+  border: 1px solid #eff1f3;
 }
 
+//utilities
+.black-txt {
+  color: $color-black;
+}
+.lightblack-txt {
+  color: $lightcolor-black;
+}
+.bold {
+  font-weight: 500;
+}
+.bolder {
+  font-weight: 700;
+}
+.pd-15 {
+  padding: 15px;
+}
+.pdLR-15 {
+  padding: 0 15px;
+}
+.mTop-6 {
+  margin-top: 6px;
+}
 
+@media(min-width:453px){
+  body{
+    color: red;
+  }
+  #parent-container{
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
 
+@media(min-width:713px) {
+  #parent-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
 
+@media(min-width:785px) {
+  #parent-container{
+    padding: 10px;
+  }
+  .dogImageOrSlider{
+    width:372px;
+  }
+  img.dogImage{
+    width: 100%;
+  }
+  div.dogInfo{
+    margin-top:-14px;
+  }
+  textarea.form-control {
+    height: 87px;
+  }
+}
 
-
-
-// @media(min-width:x){
-//   .dogImageOrSlider{
-
-//   }
-
-//   div.dog {
-//     &Image {
-
-//     }
-
-//     &Location {}
-
-//     &Bio {
-
-//       &-comment{}
-//     }
-
-//     &Info {
-
-//       &-name {}
-
-//       &-identity {}
-//     }
-//   }
-// }
+@media(min-width:900px) {
+ #parent-container {
+   padding: 40px;
+ }
+}

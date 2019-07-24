@@ -10,7 +10,7 @@ export default function Card(props) {
   };
 
   return (
-    <div>
+    <div id='parent-container'>
       <div className="dogImageOrSlider">
         <img src={props.image} className="dogImage" alt="dog" />
       </div>
