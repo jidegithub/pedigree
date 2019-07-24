@@ -2,7 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import axios from 'axios';
 import * as serviceWorker from './serviceWorker';
+
+
+//global defaults for axios
+const apiKey = 'keyyxfDwNZrcMcpyD';
+axios.defaults.baseURL = 'https://api.airtable.com/v0/appAW1lLOcstzdVWg/';
+axios.defaults.headers.common['Authorization'] = `Bearer ${apiKey}`;
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

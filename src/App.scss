@@ -1,0 +1,230 @@
+$color-black:black;
+$lightcolor-black:rgb(14, 13, 13);
+
+
+.black-txt{
+  color: $color-black;
+}
+.lightblack-txt {
+  color: $lightcolor-black;
+}
+.bold{
+  font-weight: 500;
+}
+.bolder{
+  font-weight: 700;
+}
+.pd-15{
+  padding:15px;
+}
+.pdLR-15{
+  padding: 0 15px;
+}
+
+.mTop-6{
+  margin-top: 6px;
+}
+
+/* Set box-sizing to border-box for all elements */
+html {
+  box-sizing: border-box;
+  color: #222;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  color: #777;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Reset margins and paddings on most elements */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+pre,
+blockquote,
+figure,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+/* Removes discs from ul */
+ul {
+  list-style: none;
+}
+
+/* Reset forms and buttons */
+input,
+textarea,
+select,
+button {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+input,
+textarea,
+button {
+  border: 1px solid gray;
+}
+
+button {
+  background-color: transparent;
+}
+
+button * {
+  pointer-events: none;
+}
+
+/* Easy responsive for media elements */
+embed,
+iframe,
+img,
+object,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* Hidden */
+[hidden] {
+  display: none !important;
+}
+
+/* noscript styles */
+noscript {
+  display: block;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+//color variable, mixin for flexes
+
+.dogImageOrSlider {}
+
+div.dog {
+  font-size: 12px;
+
+  &Image {
+    width: 100%;
+  }
+
+  &Location {
+    &-info{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &Bio {
+    margin-bottom: 50px;
+
+    &-comment {}
+  }
+
+  &Info {
+    // padding: 15px;
+
+    &-profile {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-identity {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid #f5efe3;
+    }
+  }
+
+  &Ownerprofile {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.age, .gender{
+  border: 1px solid #f5efe3;
+  padding:5px 10px;
+}
+
+button.dogOwnerprofileToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.45em 0.7em;
+  border: none;
+  border-radius:10px;
+  outline:none;
+  box-shadow: 2px 2px 4px 0px rgb(169, 161, 161);
+}
+
+.form-control{
+  font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+// @media(min-width:x){
+//   .dogImageOrSlider{
+
+//   }
+
+//   div.dog {
+//     &Image {
+
+//     }
+
+//     &Location {}
+
+//     &Bio {
+
+//       &-comment{}
+//     }
+
+//     &Info {
+
+//       &-name {}
+
+//       &-identity {}
+//     }
+//   }
+// }
