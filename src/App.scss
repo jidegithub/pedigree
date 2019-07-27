@@ -5,8 +5,6 @@ $lightcolor-black:rgb(14, 13, 13);
 //mixins
 
 
-
-
 /* Set box-sizing to border-box for all elements */
 html {
   box-sizing: border-box;
@@ -203,6 +201,9 @@ button.dogOwnerprofileToggle {
     display: flex;
     justify-content: space-evenly;
   }
+  .modal-card,
+  .modal-content {
+    margin: 0 0;}
 }
 
 @media(min-width:713px) {

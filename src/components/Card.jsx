@@ -46,11 +46,7 @@ export default function Card(props) {
         </div>
         <div className="dogBio">
           <form>
-            <div className="form-group">
-              <textarea className="form-control" rows="5" id="comment" maxLength="195">
-                {props.comment}
-              </textarea>
-            </div>
+            <textarea className="textarea" rows="5" placeholder="e.g. Hello world" id="comment" maxLength="195">{props.comment}</textarea>
           </form>
         </div>
       </div>
