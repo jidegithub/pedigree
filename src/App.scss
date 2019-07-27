@@ -192,6 +192,13 @@ button.dogOwnerprofileToggle {
 .mTop-6 {
   margin-top: 6px;
 }
+.modal-card,
+.modal-content {
+  margin: 0 0 !important;   
+}
+.modal-header{
+   text-align: center;
+}
 
 @media(min-width:453px){
   body{
@@ -201,9 +208,6 @@ button.dogOwnerprofileToggle {
     display: flex;
     justify-content: space-evenly;
   }
-  .modal-card,
-  .modal-content {
-    margin: 0 0;}
 }
 
 @media(min-width:713px) {

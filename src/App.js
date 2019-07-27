@@ -1,5 +1,4 @@
 import React, { Component }  from 'react';
-import './App.scss';
 import axios from 'axios';
 import CardList from './components/CardList';
 import List from './components/List';
@@ -10,7 +9,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 
 // Styles
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './App.scss';
 
 
 
@@ -24,9 +23,11 @@ class App extends Component {
     axios.get('/dogData')
       .then((res) => {
         console.log(res.data.records)
-        this.setState({
+        const populate = () =>{
+         return this.setState({
           dogDataArray: res.data.records
         })
+        }
       })
   }
 
@@ -46,3 +47,11 @@ class App extends Component {
 }
 
 export default App;
+
+//  axios.get('/dogData')
+//    .then((res) => {
+//      console.log(res.data.records)
+//      this.setState({
+//        dogDataArray: res.data.records
+//      })
+//    })
