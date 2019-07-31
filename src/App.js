@@ -40,7 +40,6 @@ class App extends Component {
         </header>
         <List />
         <CardList dogData={this.state.dogDataArray} />
-        <FormApp />
       </div>
     )
   }

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { breeds } from '../assets/dogbreed';
 // import FormComponent from '../components/form/FormApp';
 import TextInput from '../components/form/TextInput';
 import NumberInput from '../components/form/NumberInput';
 import validate from '../components/form/validate';
 import TextArea from '../components/form/TextArea';
-import Email from '../components/form/Email';
 import Select from '../components/form/Select';
+import SelectTwo from '../components/form/SelectTwo';
 import Radio from '../components/form/Radio';
 
 class Modal extends Component {
@@ -44,16 +44,6 @@ class Modal extends Component {
                },
                touched: false
            },
-           address: {
-               value: '',
-               placeholder: 'What is your address',
-               valid: false,
-               validationRules: {
-                   minLength: 4,
-                   isRequired: true
-               },
-               touched: false
-           },
            comment: {
                value: '',
                placeholder: 'brief comment about',
@@ -64,15 +54,22 @@ class Modal extends Component {
                },
                touched: false
            },
-           my_email: {
+           ageValue: {
                value: '',
-               placeholder: 'What is your email',
                valid: false,
+               touched: false,
                validationRules: {
                    isRequired: true,
-                   isEmail: true
                },
-               touched: false
+               options: [{
+                       value: 'year(s)',
+                       displayValue: 'Year(s)'
+                   },
+                   {
+                       value: 'month(s)',
+                       displayValue: 'Month(s)'
+                   }
+               ]
            },
            gender: {
                value: '',
@@ -92,13 +89,12 @@ class Modal extends Component {
                    }
                ]
            },
-           breeds: {
+           breed: {
                value: '',
-            //    placeholder: 'What is your gender',
                valid: false,
                touched: false,
                validationRules: {
-                   isRequired: true,
+                    isRequired: true,
                },
                options: [...breeds]
            },
@@ -110,12 +106,12 @@ class Modal extends Component {
                isRequired: true,
                },
                options: [{
-                       value: 'breeding',
-                       displayValue: 'For Breeding'
+                       value: 'for sale',
+                       displayValue: 'For Sale'
                    },
                    {
-                       value: 'sale',
-                       displayValue: 'For Sale'
+                       value: 'for breeding',
+                       displayValue: 'For Breeding'
                    }
                ]
            },
@@ -168,18 +164,18 @@ class Modal extends Component {
        console.dir(formData);
    }
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.target);
+    // handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     const data = new FormData(event.target);
         
-        axios.post('/dogData',{
-             body: data,
-        })
-        .then(res=>{
-                console.log(res)
-        })
-        .catch()
-    }   
+    //     axios.post('/dogData',{
+    //          body: data,
+    //     })
+    //     .then(res=>{
+    //             console.log(res)
+    //     })
+    //     .catch()
+    // }   
     
     render() {
         return (
@@ -217,33 +213,25 @@ class Modal extends Component {
                                                     valid={this.state.formControls.name.valid}
                                                 />
                                                 <div className="select">
-                                                    <select>
-                                                        <option name="ageValue">Months</option>
-                                                        <option name="ageValue">Years</option>
-                                                    </select>
+                                                    <SelectTwo name="ageValue"
+                                                        value={this.state.formControls.ageValue.value}
+                                                        onChange={this.changeHandler}
+                                                        options={this.state.formControls.ageValue.options}
+                                                        touched={this.state.formControls.ageValue.touched}
+                                                        valid={this.state.formControls.ageValue.valid}
+                                                        />
                                                 </div> 
                                             </label>
                                         </div>
                                         <div className="form-group col-md-6">
                                             <label htmlFor="inputBreed">Breed</label>
-                                            <Select name="gender"
-                                                value={this.state.formControls.breeds.value}
+                                            <Select name="breed" id="inputBreed"
+                                                value={this.state.formControls.breed.value}
                                                 onChange={this.changeHandler}
-                                                options={this.state.formControls.breeds.options}
-                                                touched={this.state.formControls.breeds.touched}
-                                                valid={this.state.formControls.breeds.valid}
+                                                options={this.state.formControls.breed.options}
+                                                touched={this.state.formControls.breed.touched}
+                                                valid={this.state.formControls.breed.valid}
                                             />
-                                            {/* <select id="inputBreed" className="form-control" value={breeds}
-                                                onChange={e => this.setState({breed: e.target.value})}
-                                                onBlur= {e => this.setState({breed: e.target.value})}
-                                                disabled={breeds.length === 0} 
-                                                multiple={false}
-                                                type="select-multiple"
-                                                name="breed"
-                                                >
-                                                <option>Choose...</option>
-                                                {breeds.map(breed => (<option key={breed} value={breed}>{breed}</option>))}
-                                            </select> */}
                                         </div>
                                         <div className = "container-fluid">
                                             < div className = "form-group col-md-12" >
@@ -340,7 +328,13 @@ class Modal extends Component {
                                     </div>
                                     <div className = "modal-footer col-md-12" >
                                         <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" className="btn btn-primary" data-dismiss="modal" >Save changes</button>
+                                        <button onClick={this.formSubmitHandler} 
+                                            disabled={! this.state.formIsValid} 
+                                            type="button" 
+                                            className="btn btn-primary" 
+                                            data-dismiss="modal" >
+                                            Save changes
+                                        </button>
                                     </div>
                             </form> 
                         </div>
