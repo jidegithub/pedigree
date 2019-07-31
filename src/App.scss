@@ -194,16 +194,35 @@ button.dogOwnerprofileToggle {
 }
 .modal-card,
 .modal-content {
-  margin: 0 0 !important;   
+  margin: 0 0 !important; 
+  max-height: calc(100vh - 10px);
+  // max-height: calc(100vh - 160px);
 }
 .modal-header{
    text-align: center;
+   & .close {
+     margin-top: -19px;
+   }
 }
+// .btn{
+//   pointer-events:cursor;
+// }
+
+// .form-control {
+//   width: 50%;
+//   border: 1px solid #ccc;
+//   padding: 10px;
+// }
+
+// .control-error {
+//   border: 1px solid red;
+// }
+
 
 @media(min-width:453px){
-  body{
-    color: red;
-  }
+  // body{
+  //   color: red;
+  // }
   #parent-container{
     display: flex;
     justify-content: space-evenly;

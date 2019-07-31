@@ -9,7 +9,7 @@ class List extends Component {
       requiredItem: 0,
       brochure: [
         {
-          title: "comment title",
+          title: "ADD NEW DATA",
           msg: "make payment on the 3rd of march"
         }
       ]
@@ -29,23 +29,23 @@ class List extends Component {
     this.setState({ brochure: tempbrochure });
   }
 
-  deleteItem(index) {
-    let tempBrochure = this.state.brochure;
-    tempBrochure.splice(index, 1);
-    this.setState({ brochure: tempBrochure });
-  }
+  // deleteItem(index) {
+  //   let tempBrochure = this.state.brochure;
+  //   tempBrochure.splice(index, 1);
+  //   this.setState({ brochure: tempBrochure });
+  // }
 
   render() {    
     const brochure = this.state.brochure.map((item, index) => {
       return (
         <main key={index}>
         
-            <div><b>{item.title}</b></div>
-            <div>{item.msg}</div>
+            {/* <div><b>{item.title}</b></div>
+            <div>{item.msg}</div> */}
             <div className="flex space-evenly">
-              <span><button className="btn trash-btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+              <span><button style={{paddingTop:'9px'}} className="btn trash-btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                   onClick={() => this.replaceModalItem(index)}>
-                  <span className="far"><Icons name={"quotes-left"} color={"#8b0000"} size={100}/></span> 
+                  <span className="far"><Icons name={"plus"} color={"#fff"} size={100}/></span> 
                   </button></span>
               {/* <span><button className="btn trash-btn btn-danger" onClick={() => this.deleteItem(index)}><i className="far fa-trash-alt">delete</i></button></span>  */}
             </div>
@@ -57,7 +57,13 @@ class List extends Component {
     const requiredItem = this.state.requiredItem;
     let modalData = this.state.brochure[requiredItem];
     return (
-      <div>
+      <div style = {{
+          position: 'fixed',
+          right: '25px',
+          bottom: '112px',
+          zIndex: '1200'
+        }}
+        >
         {/* <div style={{ textAlign: "left" }}>
           <h4>comment</h4>
         </div> */}
@@ -67,8 +73,8 @@ class List extends Component {
           </div>
         </div>
         <Modal
-          title={modalData.title}
-          msg={modalData.msg}
+          // title={modalData.title}
+          // msg={modalData.msg}
           id={this.props.id}
           saveModalDetails={this.saveModalDetails}
         />

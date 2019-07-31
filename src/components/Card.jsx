@@ -25,7 +25,7 @@ export default function Card(props) {
         </div>
         <div className="dogInfo-identity">
           <span className='gender'><Icons name={"male"} color={"#282c34"} size={19} /> {props.gender}</span>
-          <span className='age'>{props.age}months</span>
+          <span className='age'>{props.age} {props.ageValue}</span>
         </div>
         <div className="dogLocation pd-15">
           <div className='dogLocation-info'>
@@ -45,9 +45,7 @@ export default function Card(props) {
           
         </div>
         <div className="dogBio">
-          <form>
             <textarea className="textarea" rows="5" placeholder="e.g. Hello world" id="comment" maxLength="195">{props.comment}</textarea>
-          </form>
         </div>
       </div>
     </div>

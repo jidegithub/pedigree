@@ -2,6 +2,7 @@ import React, { Component }  from 'react';
 import axios from 'axios';
 import CardList from './components/CardList';
 import List from './components/List';
+import FormApp from './components/form/FormApp';
 //import AddCard from './components/AddCard';
 import 'jquery/src/jquery';
 import 'popper.js/dist/popper.min.js';
@@ -23,11 +24,9 @@ class App extends Component {
     axios.get('/dogData')
       .then((res) => {
         console.log(res.data.records)
-        const populate = () =>{
-         return this.setState({
+        this.setState({
           dogDataArray: res.data.records
-        })
-        }
+        }) 
       })
   }
 
@@ -37,10 +36,11 @@ class App extends Component {
     return (
       <div>
         <header className="App-header">
-       header
-      </header>
-      <CardList dogData={this.state.dogDataArray} />
-      <List />
+        header
+        </header>
+        <List />
+        <CardList dogData={this.state.dogDataArray} />
+        <FormApp />
       </div>
     )
   }
