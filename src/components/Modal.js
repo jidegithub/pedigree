@@ -6,7 +6,7 @@ import TextInput from '../components/form/TextInput';
 import NumberInput from '../components/form/NumberInput';
 import validate from '../components/form/validate';
 import TextArea from '../components/form/TextArea';
-import Select from './form/SelectMulti';
+import SelectMulti from './form/SelectMulti';
 import SelectTwo from '../components/form/SelectTwo';
 import Radio from '../components/form/Radio';
 
@@ -183,6 +183,7 @@ class Modal extends Component {
        }).catch((err => {
            console.log(err)
        }));
+       localStorage.clear()
    }
    
     render() {
@@ -231,7 +232,7 @@ class Modal extends Component {
                                         </div>
                                         <div className="form-group col-md-6">
                                             <label htmlFor="inputBreed">Breed</label>
-                                            <Select name="breed" id="inputBreed"
+                                            <SelectMulti name="breed" id="inputBreed"
                                                 value={this.state.formControls.breed.value}
                                                 onChange={this.changeHandler}
                                                 options={this.state.formControls.breed.options}
