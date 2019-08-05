@@ -45,7 +45,7 @@ export default function Card(props) {
           
         </div>
         <div className="dogBio">
-            <textarea className="textarea" rows="5" placeholder="e.g. Hello world" id="comment" maxLength="195">{props.comment}</textarea>
+            <textarea className="textarea" rows="5" id="comment" maxLength="195">{props.comment}</textarea>
         </div>
       </div>
     </div>
