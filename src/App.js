@@ -15,7 +15,8 @@ import './App.scss';
 class App extends Component {
 
   state = {
-    dogDataArray:[]
+    dogDataArray:[],
+    location:{}
   }
 
   componentDidMount() {

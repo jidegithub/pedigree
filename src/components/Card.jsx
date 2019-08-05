@@ -29,7 +29,7 @@ export default function Card(props) {
         </div>
         <div className="dogLocation pd-15">
           <div className='dogLocation-info'>
-            <p className='black-txt mTop-6'><Icons name={"location2"} color={"#282c34"} size={19} /> {props.location.toUpperCase()}, 4 miles away</p>
+            <p className='black-txt mTop-6'><Icons name={"location2"} color={"#282c34"} size={19} /> {props.location}, 4 miles away</p>
             <button className="dogOwnerprofileToggle" onClick={HandleBtnToggle}>
               <Icons name={"quotes-left"} color={"#282c34"} size={19} /> 
               <span className='black-txt bold'>contact owner</span> 
