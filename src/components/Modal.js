@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import { breeds } from '../assets/dogbreed';
 // import FormComponent from '../components/form/FormApp';
 import TextInput from '../components/form/TextInput';
 import NumberInput from '../components/form/NumberInput';
 import validate from '../components/form/validate';
 import TextArea from '../components/form/TextArea';
-import Select from '../components/form/Select';
+import Select from './form/SelectMulti';
 import SelectTwo from '../components/form/SelectTwo';
 import Radio from '../components/form/Radio';
+
+import ImageUpload from './ImageUpload'
 
 class Modal extends Component {
    state = {
@@ -26,7 +28,7 @@ class Modal extends Component {
            },
            name: {
                value: '',
-               placeholder: 'What is your name',
+               placeholder: 'What is the name of your dog',
                valid: false,
                validationRules: {
                    minLength: 4,
@@ -46,7 +48,7 @@ class Modal extends Component {
            },
            comment: {
                value: '',
-               placeholder: 'brief comment about',
+               placeholder: 'brief comment about your dog',
                valid: false,
                validationRules: {
                    minLength: 4,
@@ -55,7 +57,7 @@ class Modal extends Component {
                touched: false
            },
            ageValue: {
-               value: '',
+               value: 0,
                valid: false,
                touched: false,
                validationRules: {
@@ -124,6 +126,12 @@ class Modal extends Component {
                    isRequired: true
                },
                touched: false
+           },
+           imageLink:{
+               value: [{
+                    "url": sessionStorage.getItem("imageUrl")
+                }],
+               valid: true,
            } 
        }
    }
@@ -161,22 +169,34 @@ class Modal extends Component {
        for (let formElementId in this.state.formControls) {
            formData[formElementId] = this.state.formControls[formElementId].value;
        }
+       
        console.dir(formData);
-   }
 
-    // handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     const data = new FormData(event.target);
-        
-    //     axios.post('/dogData',{
-    //          body: data,
-    //     })
-    //     .then(res=>{
-    //             console.log(res)
-    //     })
-    //     .catch()
-    // }   
-    
+       let items = [];
+
+       axios.post('/dogData',{ 
+       "fields":{...formData}, 
+        "typecast": true
+      })
+        .then((response) => {
+             items.unshift(formData);
+             console.log(items)
+        alert(`successfully added 😆!`);
+        //    name = '';
+        //    imageLink = '';
+        //    breed = '';
+        //    gender = '';
+        //    age = '';
+        //    comment = '';
+        //    ownerInfo = '';
+        //    userName = '';
+        //    purpose = '';
+        //    ageValue = ''
+       }).catch((err => {
+           console.log(err)
+       }));
+   }
+   
     render() {
         return (
             <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -189,12 +209,10 @@ class Modal extends Component {
                             </button>
                         </div>
                         <div className="modal-body">
-                            <form className="form-popup" onSubmit={this.handleSubmit}>
-                                
-                                
+                            <form className="form-popup">
                                     <div className="form-row">
                                         <div className="form-group col-md-3">
-                                            <label htmlFor="name">Name</label>
+                                            <label htmlFor="name">Dog Name</label>
                                                 <TextInput name="name" id="name"
                                                     placeholder={this.state.formControls.name.placeholder}
                                                     value={this.state.formControls.name.value}
@@ -234,49 +252,21 @@ class Modal extends Component {
                                             />
                                         </div>
                                         <div className = "container-fluid">
-                                            < div className = "form-group col-md-12" >
-                                                <div className="file has-name is-boxed">
-                                                    <label className="file-label">
-                                                        <input className="file-input" type="file" name="resume" />
-                                                        <span className="file-cta">
-                                                        <span className="file-icon">
-                                                            <i className="fas fa-upload"></i>
-                                                        </span>
-                                                        <span className="file-label">
-                                                            Choose a file…
-                                                        </span>
-                                                        </span>
-                                                        <span className="file-name">
-                                                        Screen Shot 2017-07-29 at 15.54.25.png
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            </div> 
+                                            <ImageUpload />
                                         </div>
                                         
                                         <div className = "container-fluid">
-                                            <div>
-                                                <div className="custom-control custom-radio custom-control-inline">
-                                                    <Radio name="gender"
-                                                    value={this.state.formControls.gender.value}
-                                                    onChange={this.changeHandler}
-                                                    options={this.state.formControls.gender.options}
-                                                    touched={this.state.formControls.gender.touched}
-                                                    valid={this.state.formControls.gender.valid}
-                                                    />
-                                                </div>
-                                                
-                                                {/* <div className="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" id="customRadioInline1" name="gender" className="custom-control-input" />
-                                                    <label className="custom-control-label" htmlFor="customRadioInline1">Female</label>
-                                                </div>
-                                                <div className="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" id="customRadioInline2" name="gender" className="custom-control-input" />
-                                                    <label className="custom-control-label" htmlFor="customRadioInline2">Male</label>
-                                                </div> */}
+                                            <div className="custom-control custom-radio custom-control-inline">
+                                                <Radio name="gender"
+                                                value={this.state.formControls.gender.value}
+                                                onChange={this.changeHandler}
+                                                options={this.state.formControls.gender.options}
+                                                touched={this.state.formControls.gender.touched}
+                                                valid={this.state.formControls.gender.valid}
+                                                />
                                             </div>
                                             
-                                            <div>
+                                            <div className = "custom-control custom-radio custom-control-inline" >
                                                 <Radio name="purpose"
                                                     value={this.state.formControls.purpose.value}
                                                     onChange={this.changeHandler}
@@ -284,14 +274,6 @@ class Modal extends Component {
                                                     touched={this.state.formControls.purpose.touched}
                                                     valid={this.state.formControls.purpose.valid}
                                                 />
-                                                {/* <div className="custom-control custom-checkbox">
-                                                    <input type="radio" id="customRadioInline3" name="purpose" className="custom-control-input" />
-                                                    <label className="custom-control-label" htmlFor="customRadioInline2">For Breeding</label>
-                                                </div>
-                                                <div className="custom-control custom-checkbox">
-                                                    <input type="radio" id="customRadioInline3" name="purpose" className="custom-control-input" />
-                                                    <label className="custom-control-label" htmlFor="customRadioInline2">For Sale</label>
-                                                </div> */}
                                             </div>
                                         </div>
                                         <div className='form-group'>
@@ -333,7 +315,7 @@ class Modal extends Component {
                                             type="button" 
                                             className="btn btn-primary" 
                                             data-dismiss="modal" >
-                                            Save changes
+                                            Submit
                                         </button>
                                     </div>
                             </form> 

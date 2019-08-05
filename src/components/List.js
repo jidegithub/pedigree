@@ -54,8 +54,8 @@ class List extends Component {
       )
     });
     
-    const requiredItem = this.state.requiredItem;
-    let modalData = this.state.brochure[requiredItem];
+    // const requiredItem = this.state.requiredItem;
+    // let modalData = this.state.brochure[requiredItem];
     return (
       <div style = {{
           position: 'fixed',
