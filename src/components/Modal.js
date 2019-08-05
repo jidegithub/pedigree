@@ -117,7 +117,7 @@ class Modal extends Component {
                    }
                ]
            },
-           phoneNumber: {
+           ownerInfo: {
                value: '',
                placeholder: '08123456789',
                valid: false,
@@ -172,26 +172,14 @@ class Modal extends Component {
        
        console.dir(formData);
 
-       let items = [];
-
        axios.post('/dogData',{ 
-       "fields":{...formData}, 
+       fields:formData, 
         "typecast": true
       })
         .then((response) => {
-             items.unshift(formData);
-             console.log(items)
+        console.log(response)
         alert(`successfully added 😆!`);
-        //    name = '';
-        //    imageLink = '';
-        //    breed = '';
-        //    gender = '';
-        //    age = '';
-        //    comment = '';
-        //    ownerInfo = '';
-        //    userName = '';
-        //    purpose = '';
-        //    ageValue = ''
+       
        }).catch((err => {
            console.log(err)
        }));
@@ -298,13 +286,13 @@ class Modal extends Component {
                                                 />
                                         </div>
                                         <div className="form-group col-md-4">
-                                            <label htmlFor="phoneNumber">Phone Number</label>
-                                                <NumberInput name="phoneNumber" id="phoneNumber"
-                                                    placeholder={this.state.formControls.phoneNumber.placeholder}
-                                                    value={this.state.formControls.phoneNumber.value}
+                                            <label htmlFor="ownerInfo">Phone Number</label>
+                                                <NumberInput name="ownerInfo" id="ownerInfo"
+                                                    placeholder={this.state.formControls.ownerInfo.placeholder}
+                                                    value={this.state.formControls.ownerInfo.value}
                                                     onChange={this.changeHandler}
-                                                    touched={this.state.formControls.phoneNumber.touched}
-                                                    valid={this.state.formControls.phoneNumber.valid}
+                                                    touched={this.state.formControls.ownerInfo.touched}
+                                                    valid={this.state.formControls.ownerInfo.valid}
                                                 />
                                         </div>
                                     </div>
