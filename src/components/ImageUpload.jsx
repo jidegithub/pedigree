@@ -27,7 +27,7 @@ class ImageUpload extends Component {
     if (e.target.files[0]) {
       const image = e.target.files[0];
       this.setState(() => ({ image }));
-      localStorage.setItem('imageName', image.name)
+      sessionStorage.setItem("imageName", image.name)
       
        const storage = firebase.storage();
         // const {image} = this.state;
@@ -46,8 +46,9 @@ class ImageUpload extends Component {
     () => {
         // complete function ....
       storage.ref('dogImages').child(image.name).getDownloadURL().then(url => {
-            localStorage.setItem('imageUrl', url)
-            window.linker = console.log(url);
+            console.log(url)
+            var IMAGELINK = url;
+            sessionStorage.setItem("imageUrl", IMAGELINK)
             this.setState({url});
         })
     });
@@ -72,7 +73,7 @@ class ImageUpload extends Component {
                 </span>
               </span>
               <span className="file-name">
-                {localStorage.getItem('imageName')}
+                {sessionStorage.getItem("imageName")}
               </span>
             </label>
           </div>

@@ -134,7 +134,7 @@ class Modal extends Component {
            },
            imageLink:{
                value: [{
-                    "url": localStorage.getItem('imageUrl')
+                    "url": sessionStorage.getItem("imageUrl")
                 }],
                valid: true,
            } 
@@ -188,7 +188,6 @@ class Modal extends Component {
        }).catch((err => {
            console.log(err)
        }));
-       localStorage.clear()
    }
    
     render() {
