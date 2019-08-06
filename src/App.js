@@ -2,7 +2,6 @@ import React, { Component }  from 'react';
 import axios from 'axios';
 import CardList from './components/CardList';
 import List from './components/List';
-import './components/firebase/firebase';
 
 import 'jquery/src/jquery';
 import 'popper.js/dist/popper.min.js';

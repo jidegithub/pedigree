@@ -1,6 +1,7 @@
 //color variables
 $color-black:black;
 $lightcolor-black:rgb(14, 13, 13);
+$primary-color:rgb(211, 4, 236);
 
 //mixins
 
@@ -15,7 +16,7 @@ html {
 body {
   font-size: 1.5rem;
   color: #777;
-  background: linear-gradient(0deg, rgb(217, 153, 41), rgb(211, 4, 236));
+  background: linear-gradient(0deg, rgb(217, 153, 41), $primary-color);
   // linear-gradient(45deg, rgb(252, 209, 5) 0%, rgb(252, 209, 5) 6%, rgb(246, 177, 19) 6%, rgb(246, 177, 19) 19%, rgb(240, 146, 32) 19%, rgb(240, 146, 32) 41%, rgb(235, 114, 46) 41%, rgb(235, 114, 46) 55%, rgb(229, 83, 59) 55%, rgb(229, 83, 59) 94%, rgb(223, 51, 73) 94%, rgb(223, 51, 73) 100%);
 }
 
@@ -96,6 +97,24 @@ noscript {
   margin-top: 1em;
 }
 
+.carousel{
+  background-color: #343a40;
+  height: 100vh;
+  &-inner{
+    height: 100vh
+  }
+  &-item{
+    width: 100%;
+  }
+  &-img{
+    width: 65vw;
+  }
+  &-caption{
+    top: 385px;
+  }
+}
+
+
 .App {
   text-align: center;
 }
@@ -111,8 +130,8 @@ noscript {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+:link, a {
+  color: #fff!important;
 }
 
 //color variable, mixin for flexes
