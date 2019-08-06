@@ -1,8 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
-
-
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -48,14 +46,12 @@ class ImageUpload extends Component {
     () => {
         // complete function ....
       storage.ref('dogImages').child(image.name).getDownloadURL().then(url => {
-            console.log(url);
             localStorage.setItem('imageUrl', url)
+            console.log(url);
             this.setState({url});
         })
     });
-    }
-    
-     
+    }  
   }
   render() {
     return (

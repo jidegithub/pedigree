@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { breeds } from '../assets/dogbreed';
+import ImageUpload from './ImageUpload';
 // import FormComponent from '../components/form/FormApp';
 import TextInput from '../components/form/TextInput';
 import NumberInput from '../components/form/NumberInput';
@@ -10,7 +11,7 @@ import SelectMulti from './form/SelectMulti';
 import SelectTwo from '../components/form/SelectTwo';
 import Radio from '../components/form/Radio';
 
-import ImageUpload from './ImageUpload'
+
 
 class Modal extends Component {
    state = {
