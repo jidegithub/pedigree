@@ -34,8 +34,8 @@ class App extends Component {
         <header className="App-header">
         header
         </header>
-        <List />
         <CardList dogData={this.state.dogDataArray} />
+        <List />
       </div>
     )
   }

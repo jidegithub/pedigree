@@ -15,6 +15,7 @@ const Radio = props => {
                 <div className="custom-control custom-radio custom-control-inline" key={option.value}>
                     <label>{option.displayValue}</label>
                     <input type="radio"
+                        style={{ width: '17.78px'}}
                         name={props.name}
                         value={option.value}
                         onChange={props.onChange}

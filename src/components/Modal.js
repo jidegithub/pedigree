@@ -64,6 +64,10 @@ class Modal extends Component {
                    isRequired: true,
                },
                options: [{
+                           value: 'null',
+                           displayValue: '...'
+                       }, 
+                    {
                        value: 'year(s)',
                        displayValue: 'Year(s)'
                    },
@@ -264,18 +268,18 @@ class Modal extends Component {
                                                     valid={this.state.formControls.purpose.valid}
                                                 />
                                             </div>
+                                        
+                                            <div className='form-group'>
+                                                <label htmlFor="exampleFormControlTextarea1">Comment</label>
+                                                <TextArea name="comment" id="exampleFormControlTextarea1" row="3"
+                                                    placeholder={this.state.formControls.comment.placeholder}
+                                                    value={this.state.formControls.comment.value}
+                                                    onChange={this.changeHandler}
+                                                    touched={this.state.formControls.comment.touched}
+                                                    valid={this.state.formControls.comment.valid}
+                                                />
+                                            </div>
                                         </div>
-                                        <div className='form-group'>
-                                            <label htmlFor="exampleFormControlTextarea1">Comment</label>
-                                            <TextArea name="comment" id="exampleFormControlTextarea1" row="3"
-                                                placeholder={this.state.formControls.comment.placeholder}
-                                                value={this.state.formControls.comment.value}
-                                                onChange={this.changeHandler}
-                                                touched={this.state.formControls.comment.touched}
-                                                valid={this.state.formControls.comment.valid}
-                                            />
-                                        </div>
-    
                                         <div className="form-group col-md-6">
                                             <label htmlFor="userName">Username</label>
                                                 <TextInput name="userName" id="username"

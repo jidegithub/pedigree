@@ -11,7 +11,7 @@ export default function Card(props) {
 
   return (
     <div style={{marginBottom: '10px'}} id='parent-container'>
-      <div className="dogImageOrSlider">
+      <div className="slide-in-right2 dogImageOrSlider">
         <img src={props.image} className="dogImage" alt="dog" />
       </div>
       <div className="dogInfo">
