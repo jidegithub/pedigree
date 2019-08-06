@@ -10,12 +10,11 @@ const Radio = props => {
 
     return (
         <div className="form-group">
-
             {props.options.map(option => (
                 <div className="custom-control custom-radio custom-control-inline" key={option.value}>
                     <label>{option.displayValue}</label>
                     <input type="radio"
-                        style={{ width: '17.78px'}}
+                        style={{ width: '17.78px', position: 'relative', bottom: '5px', left: '5px'}}
                         name={props.name}
                         value={option.value}
                         onChange={props.onChange}
@@ -23,7 +22,6 @@ const Radio = props => {
                     />
                 </div>
             ))}
-
         </div>
     );
 }

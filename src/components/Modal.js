@@ -198,7 +198,7 @@ class Modal extends Component {
                         <div className="modal-header">
                             <h5 className="modal-title" id="exampleModalLabel"><strong>ADD NEW DOG DATA</strong></h5>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true" style={{position: 'relative',bottom: '1px'}}>&times;</span>
+                                <span aria-hidden="true" style={{position: 'relative',bottom: '-8px'}}>&times;</span>
                             </button>
                         </div>
                         <div className="modal-body">
