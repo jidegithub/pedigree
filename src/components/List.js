@@ -45,7 +45,7 @@ class List extends Component {
             <div className="flex space-evenly">
               <span><button style={{paddingTop:'9px'}} className="btn trash-btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                   onClick={() => this.replaceModalItem(index)}>
-                  <span className="far"><Icons name={"plus"} color={"#fff"} size={100}/></span> 
+                  <span style={{paddingLeft: '3px'}} className="far"><Icons name={"plus"} color={"#fff"} size={100}/></span> 
                   </button></span>
               {/* <span><button className="btn trash-btn btn-danger" onClick={() => this.deleteItem(index)}><i className="far fa-trash-alt">delete</i></button></span>  */}
             </div>

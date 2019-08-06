@@ -15,6 +15,8 @@ html {
 body {
   font-size: 1.5rem;
   color: #777;
+  background: linear-gradient(0deg, rgb(217, 153, 41), rgb(211, 4, 236));
+  // linear-gradient(45deg, rgb(252, 209, 5) 0%, rgb(252, 209, 5) 6%, rgb(246, 177, 19) 6%, rgb(246, 177, 19) 19%, rgb(240, 146, 32) 19%, rgb(240, 146, 32) 41%, rgb(235, 114, 46) 41%, rgb(235, 114, 46) 55%, rgb(229, 83, 59) 55%, rgb(229, 83, 59) 94%, rgb(223, 51, 73) 94%, rgb(223, 51, 73) 100%);
 }
 
 *,
@@ -130,10 +132,11 @@ div.dog {
     }
   }
   &Bio {
-    margin-bottom: 50px;
+    margin-bottom: 5px;
     //&-comment {}
   }
   &Info {
+    background-color:#fff;
     &-profile {
       display: flex;
       justify-content: space-between;
@@ -205,9 +208,9 @@ button.dogOwnerprofileToggle {
       cursor: pointer;
    }
 }
-// .btn{
-//   pointer-events:cursor;
-// }
+.btn{
+  cursor:pointer;
+}
 
 // .form-control {
 //   width: 50%;
@@ -215,9 +218,9 @@ button.dogOwnerprofileToggle {
 //   padding: 10px;
 // }
 
-// .control-error {
-//   border: 1px solid red;
-// }
+.control-error {
+  border: 1px solid red;
+}
 
 
 @media(min-width:453px){
@@ -239,7 +242,7 @@ button.dogOwnerprofileToggle {
 
 @media(min-width:785px) {
   #parent-container{
-    padding: 10px;
+    // padding: 10px;
   }
   .dogImageOrSlider{
     width:372px;
@@ -248,7 +251,8 @@ button.dogOwnerprofileToggle {
     width: 100%;
   }
   div.dogInfo{
-    margin-top:-14px;
+    background-color:#fff!important;
+    // margin-top:-14px;
   }
   textarea.form-control {
     height: 87px;
@@ -257,6 +261,13 @@ button.dogOwnerprofileToggle {
 
 @media(min-width:900px) {
  #parent-container {
-   padding: 40px;
+  // padding: 10px;
+   display: grid;
+   grid-template-columns: auto;
+ }
+ .super-parentContainer{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
  }
 }
+

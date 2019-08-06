@@ -10,15 +10,15 @@ export default function Card(props) {
   };
 
   return (
-    <div id='parent-container'>
+    <div style={{marginBottom: '10px'}} id='parent-container'>
       <div className="dogImageOrSlider">
         <img src={props.image} className="dogImage" alt="dog" />
       </div>
       <div className="dogInfo">
         <div className="dogInfo-profile pd-15">
           <span className='bold'>{props.name}</span>
-          <span><Icons name={"heart4"} color={"#282c34"} size={19} /> {props.likesCount} likes</span>
-          {/* <span><Icons name={"heart5"} color={"#eee"} size={19} /> {props.likesCount} likes</span> */}
+          {/* <span><Icons name={"heart4"} color={"#282c34"} size={19} /> {props.likesCount} likes</span> */}
+          <span><Icons name={"heart5"} color={"#FF1493"} size={19} /> {props.likesCount} likes</span>
         </div>
         <div className='pdLR-15'>
           <p className='lightblack-txt bolder'>{props.breed}</p>

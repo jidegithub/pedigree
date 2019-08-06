@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 
 const Icon = ({ name, color, size }) => (
- <svg className={`icon icon-${name}`} fill={color} width={size} height={size}>
+ <svg style={{paddingRight: '4px'}} className={`icon icon-${name}`} fill={color} width={size} height={size}>
    <use xlinkHref={`${Icons}#icon-${name}`} />
  </svg>
 );

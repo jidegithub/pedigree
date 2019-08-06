@@ -6,7 +6,7 @@ import Card from './Card';
 
      return (
         <>
-            <div>
+            <div className="super-parentContainer">
                 {props.dogData.map((dog, i) => {
                     const { name, breed, imageLink, likesCount, gender, age, ageValue, location, comment, userName, ownerInfo, purpose } = dog.fields
                     // console.log(typeof(imageLink[0].url))
