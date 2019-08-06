@@ -47,7 +47,7 @@ class ImageUpload extends Component {
         // complete function ....
       storage.ref('dogImages').child(image.name).getDownloadURL().then(url => {
             localStorage.setItem('imageUrl', url)
-            console.log(url);
+            window.linker = console.log(url);
             this.setState({url});
         })
     });
