@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Carousel from './components/Carousel';
-import App from './App'
+import App from './App';
 
  const AppRouter = () => (
     <BrowserRouter>
