@@ -20,8 +20,8 @@ class HomeComponent extends Component {
                     language={'en'}
                     country={'country:in|country:us'}
                     coordinates={true}
-                    locationBoxStyle={'custom-style'}
-                    locationListStyle={'custom-style-list'}
+                    // locationBoxStyle={'custom-style'}
+                    // locationListStyle={'custom-style-list'}
                     onChange={(e) => { this.setState({ place: e }) }} 
                     />
             </div>

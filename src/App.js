@@ -2,7 +2,7 @@ import React, { Component }  from 'react';
 import axios from 'axios';
 import CardList from './components/CardList';
 import List from './components/List';
-import GoogleLocation from './components/GoogleLocation';
+// import GoogleLocation from './components/GoogleLocation';
 
 import 'jquery/src/jquery';
 import 'popper.js/dist/popper.min.js';
@@ -32,7 +32,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <GoogleLocation />
+        {/* <GoogleLocation /> */}
         <header className="App-header">
         header
         </header>

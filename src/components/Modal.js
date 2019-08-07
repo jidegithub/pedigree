@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { breeds } from '../assets/dogbreed';
 import ImageUpload from './ImageUpload';
+import GoogleLocation from './GoogleLocation';
+
 // import FormComponent from '../components/form/FormApp';
 import TextInput from '../components/form/TextInput';
 import NumberInput from '../components/form/NumberInput';
@@ -299,6 +301,10 @@ class Modal extends Component {
                                                     touched={this.state.formControls.ownerInfo.touched}
                                                     valid={this.state.formControls.ownerInfo.valid}
                                                 />
+                                        </div>
+                                        <div className = "form-group col-md-4" >
+                                            <label htmlFor = "ownerInfo" >Location</label>
+                                            <GoogleLocation />
                                         </div>
                                     </div>
                                     <div className = "modal-footer col-md-12" >
