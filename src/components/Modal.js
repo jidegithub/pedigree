@@ -34,7 +34,7 @@ class Modal extends Component {
                placeholder: 'What is the name of your dog',
                valid: false,
                validationRules: {
-                   minLength: 4,
+                   minLength: 3,
                    isRequired: true
                },
                touched: false
@@ -138,6 +138,10 @@ class Modal extends Component {
                value: [{
                     "url": sessionStorage.getItem("imageUrl")
                 }],
+               valid: true,
+           },
+           location: {
+               value: '',
                valid: true,
            } 
        }
@@ -302,7 +306,7 @@ class Modal extends Component {
                                                     valid={this.state.formControls.ownerInfo.valid}
                                                 />
                                         </div>
-                                        <div className = "form-group col-md-12" >
+                                        <div className = "container-fluid" >
                                             <label htmlFor = "ownerInfo" >Location</label>
                                             <GoogleLocation />
                                         </div>
