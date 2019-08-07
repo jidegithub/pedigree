@@ -283,6 +283,7 @@ button.dogOwnerprofileToggle {
 }
 .btn{
   cursor:pointer;
+  margin-top: 5px;
 }
 
 // .form-control {
@@ -294,12 +295,17 @@ button.dogOwnerprofileToggle {
 .control-error {
   border: 1px solid red;
 }
+.bg-black{
+  background-color: #282c34;
+}
 
 
 @media(min-width:453px){
   // body{
   //   color: red;
   // }
+
+
   #parent-container{
     display: flex;
     justify-content: space-evenly;

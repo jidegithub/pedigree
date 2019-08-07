@@ -25,8 +25,11 @@ function ControlledCarousel() {
                 /> 
                 
                 <Carousel.Caption>
-                    <h3>Chill in your house</h3>
-                    <p>Dog walk shows are good but not neccessary</p>
+                    <div className="bg-black">
+                        <h3>Chill in your house</h3>
+                        <p>Dog walk shows are good but not neccessary</p>
+                    </div>
+                    
                 </Carousel.Caption>
             </Carousel.Item>
 
@@ -37,8 +40,11 @@ function ControlledCarousel() {
                     alt="second slide"
                 />
                 <Carousel.Caption>
-                    <h3>A snapshot is enough</h3>
-                    <p>Supply some information about your dog and everyone knows</p>
+                    <div className="bg-black">
+                        <h3>A snapshot is enough</h3>
+                        <p>Supply some information about your dog and everyone knows</p>
+                    </div>
+                    
                 </Carousel.Caption>
             </Carousel.Item>
 
@@ -49,10 +55,11 @@ function ControlledCarousel() {
                     alt="Third slide"
                 />
                 <Carousel.Caption>
-                    <h3>View Listings</h3>
-                    <p>
-                        Either for breeding or for sale, we have got you covered 
-                    </p>
+                    <div className="bg-black">
+                        <h3>View Listings</h3>
+                        <p>Either for breeding or for sale, we have got you covered </p>
+                    </div>
+                   
                     <div style={{ padding: '6px', backgroundColor: 'rgb(211, 4, 236)', color:'#fff'}}>
                        <Link to="/app" >explore</Link> 
                    </div>
