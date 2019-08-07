@@ -302,7 +302,7 @@ class Modal extends Component {
                                                     valid={this.state.formControls.ownerInfo.valid}
                                                 />
                                         </div>
-                                        <div className = "form-group col-md-4" >
+                                        <div className = "form-group col-md-12" >
                                             <label htmlFor = "ownerInfo" >Location</label>
                                             <GoogleLocation />
                                         </div>
