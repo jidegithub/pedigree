@@ -158,18 +158,6 @@ class Modal extends Component {
           console.log(this.state.formControls.imageLink)
       }))
 
-      
-
-        // ref('dogImages').child(image.name).getDownloadURL().then(url => {
-        //     console.log(url)
-        //     var IMAGELINK = url;
-
-        //     this.setState({
-        //         url
-        //     });
-        // })
-
-
        const name = event.target.name;
        const value = event.target.value;
 
@@ -204,22 +192,13 @@ class Modal extends Component {
        
        console.dir(formData);
 
-    //    axios.get('https://api.backendless.com/865B2F56-7DB8-747F-FFFC-33F958732E00/A56CE7EF-1B8E-481D-FFF8-1D016EEF4D00/data/imagelink')
-    //        .then((res) => {
-    //            console.log('updated', res)
-    //            this.setState({
-    //                imageLink: res.data.records
-    //            })
-    //        })
-
        axios.post('/dogData',{ 
        fields:formData, 
         "typecast": true
-      })
+      }, axios.get('/dogData'))
         .then((response) => {
-        console.log(response)
-        alert(`successfully added 😆!`);
-       
+            console.log(response)
+            alert(`successfully added 😆!`);
        }).catch((err => {
            console.log(err)
        }));

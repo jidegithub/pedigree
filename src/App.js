@@ -19,6 +19,11 @@ class App extends Component {
     location:{}
   }
 
+  componentWillMount(){
+    //placeholder to hold something that firebase can reference to
+    sessionStorage.setItem("imageName", "image name")
+  }
+
   componentDidMount() {
     axios.get('/dogData')
       .then((res) => {
