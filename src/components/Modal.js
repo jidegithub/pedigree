@@ -3,7 +3,6 @@ import axios from 'axios';
 import { breeds } from '../assets/dogbreed';
 import ImageUpload from './ImageUpload';
 import GoogleLocation from './GoogleLocation';
-import * as firebase from 'firebase/app';
 import {storage} from 'firebase';
 
 // import FormComponent from '../components/form/FormApp';
@@ -316,7 +315,9 @@ class Modal extends Component {
                                         </div>
                                         <div className = "container-fluid" >
                                             <label htmlFor = "ownerInfo" >Location</label>
-                                            <GoogleLocation />
+                                            <GoogleLocation 
+                                                value={this.state.formControls.location.value}
+                                            />
                                         </div>
                                     </div>
                                     <div className = "modal-footer col-md-12" >

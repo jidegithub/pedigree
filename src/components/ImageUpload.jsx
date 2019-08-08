@@ -58,6 +58,7 @@ class ImageUpload extends Component {
         <br/>
         <div className="form-group col-md-12">
           <progress value={this.state.progress} max="100"/>
+          <p>Uploading Selected Image: {this.state.progress}%</p>
           <div className="file has-name is-boxed">
             <label className="file-label">
               <input className="file-input" type="file" onChange={this.handleUpload} />
