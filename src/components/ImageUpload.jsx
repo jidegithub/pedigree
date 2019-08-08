@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase/app';
 import 'firebase/storage';
-import axios from 'axios';
+import Storage from 'asyncstorage';
+import {localforage} from 'localforage';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -48,21 +49,7 @@ class ImageUpload extends Component {
         // complete function ....
       storage.ref('dogImages').child(image.name).getDownloadURL().then(url => {
             console.log(url)
-            var IMAGELINK = url;
-              axios.post('https://api.backendless.com/865B2F56-7DB8-747F-FFFC-33F958732E00/A56CE7EF-1B8E-481D-FFF8-1D016EEF4D00/data/imagelink', {
-              "link": IMAGELINK
-              })
-                .then(function Response (response) {
-                  console.log(response);
-                  axios.get('https://api.backendless.com/865B2F56-7DB8-747F-FFFC-33F958732E00/A56CE7EF-1B8E-481D-FFF8-1D016EEF4D00/data/imagelink')
-                    .then((res) => {
-                      console.log("updated get", res)
-                      return res;
-                    })
-                })
-                .catch(function (error) {
-                  console.log(error);
-                });
+             Storage({livelink: url}, (err)=>{}) 
             this.setState({url});
         })
     });

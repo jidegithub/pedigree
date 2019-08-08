@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Storage from 'asyncstorage/dist/storage';
 import { breeds } from '../assets/dogbreed';
 import ImageUpload from './ImageUpload';
 import GoogleLocation from './GoogleLocation';
@@ -136,7 +137,7 @@ class Modal extends Component {
            },
            imageLink:{
                value: [{
-                    "url": ""
+                    "url": Storage('livelink', (err,val)=>{})
                 }],
                valid: true,
            },
@@ -182,14 +183,6 @@ class Modal extends Component {
        }
        
        console.dir(formData);
-
-    //    axios.get('https://api.backendless.com/865B2F56-7DB8-747F-FFFC-33F958732E00/A56CE7EF-1B8E-481D-FFF8-1D016EEF4D00/data/imagelink')
-    //        .then((res) => {
-    //            console.log('updated', res)
-    //            this.setState({
-    //                imageLink: res.data.records
-    //            })
-    //        })
 
        axios.post('/dogData',{ 
        fields:formData, 
