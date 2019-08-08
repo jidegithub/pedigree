@@ -3,6 +3,8 @@ import axios from 'axios';
 import { breeds } from '../assets/dogbreed';
 import ImageUpload from './ImageUpload';
 import GoogleLocation from './GoogleLocation';
+import * as firebase from 'firebase/app';
+import {storage} from 'firebase';
 
 // import FormComponent from '../components/form/FormApp';
 import TextInput from '../components/form/TextInput';
@@ -148,6 +150,25 @@ class Modal extends Component {
    }
 
    changeHandler = event => {
+      console.log(storage().ref('dogImages').child(sessionStorage.getItem("imageName")).getDownloadURL().then(url => {
+          console.log('return', url)
+          this.setState({
+              ...this.state.formControls.imageLink.value[0].url=url
+          })
+          console.log(this.state.formControls.imageLink)
+      }))
+
+      
+
+        // ref('dogImages').child(image.name).getDownloadURL().then(url => {
+        //     console.log(url)
+        //     var IMAGELINK = url;
+
+        //     this.setState({
+        //         url
+        //     });
+        // })
+
 
        const name = event.target.name;
        const value = event.target.value;
