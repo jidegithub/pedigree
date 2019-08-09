@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Storage from 'asyncstorage/dist/storage';
 import { breeds } from '../assets/dogbreed';
 import ImageUpload from './ImageUpload';
 import GoogleLocation from './GoogleLocation';
@@ -137,7 +138,7 @@ class Modal extends Component {
            },
            imageLink:{
                value: [{
-                    "url": ""
+                    "url": Storage('livelink', (err,val)=>{})
                 }],
                valid: true,
            },
