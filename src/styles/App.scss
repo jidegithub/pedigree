@@ -1,0 +1,399 @@
+//color variables
+$color-black:black;
+$lightcolor-black:rgb(14, 13, 13);
+$primary-color:#E5E5E5;
+$secondary-color:#282c34;
+$pinkish: #F27130;
+
+//mixins
+
+
+/* Set box-sizing to border-box for all elements */
+html {
+  box-sizing: border-box;
+  color: #222;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  color: #777;
+  background: $primary-color;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Reset margins and paddings on most elements */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+pre,
+blockquote,
+figure,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+/* Removes discs from ul */
+ul {
+  list-style: none;
+}
+
+/* Reset forms and buttons */
+input,
+textarea,
+select{
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+input, textarea{
+  background-color: #F0F0F0!important;
+}
+
+input,
+button, 
+select {
+  height: 36px !important;
+  font-size: 14px!important;
+}
+
+::-webkit-input-placeholder{
+  font-size: 14px;
+}
+
+button * {
+  pointer-events: none;
+}
+
+/* Easy responsive for media elements */
+embed,
+iframe,
+img,
+object,
+video {
+  display: block;
+  max-width: 100%;
+}
+.hidden{
+  display: none;
+}
+.unhide{
+  display: block;
+}
+
+:link,
+a {
+  text-decoration: none !important;
+}
+
+// ONBOARDING CAROUSEL
+.swiper-container {
+  height: 100vh;
+}
+
+// .linkToUserView {
+//   position: absolute;
+//   top: 80%;
+//   left: 50%;
+  
+//   transform: translate(-50%, -50%);
+//   & a{
+//     font-size: 15px;
+//     padding: 10px 30px;
+//     background: $secondary-color;
+//     box-shadow: 0px 4px 13px black;
+//   }
+// }
+
+.login-Cont{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  font-size: 15px;
+}
+
+.pinkBtnBgClr{
+  background-color: $pinkish;
+}
+.pinkBtnClr{
+  color: $pinkish!important;
+}
+
+.add-btn{
+  padding: 16px 0;
+  border-radius: 50%!important;
+  width: 63px;
+  height: 63px!important;
+  box-shadow: 1px 4px 12px black;
+}
+
+.lower {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+
+#bottom {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+input.search {
+  width: 50%;
+  padding: 25px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: vertical;
+  outline: none;
+  font-size: 20px;
+  color: #222;
+  order: 1;
+  display: flex;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+//APP MAIN
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: $secondary-color;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+//APP MAIN END
+
+
+//.dogImageOrSlider {}
+
+div.dog {
+  font-size: 12px;
+
+  &Image {
+    width: 100%;
+  }
+  &Location {
+    &-info{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &Bio {
+    margin-bottom: 5px;
+    //&-comment {}
+  }
+  &Info {
+    background-color:#fff;
+    &-profile {
+      display: flex;
+      justify-content: space-between;
+    }
+  &-identity {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid #f5efe3;
+    }
+  }
+  &Ownerprofile {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.age, .gender{
+  border: 1px solid #f5efe3;
+  padding:5px 10px;
+}
+.textarea{
+  font-size: 1.2rem;
+}
+
+button.dogOwnerprofileToggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.45em 0.7em;
+  border: none;
+  border-radius:10px;
+  outline:none;
+  box-shadow: 2px 2px 4px 0px rgb(169, 161, 161);
+}
+
+.form-control{
+  font-size: 1.5rem;
+  border: 1px solid #eff1f3;
+}
+
+//utilities
+.black-txt {
+  color: $color-black;
+}
+.lightblack-txt {
+  color: $lightcolor-black;
+}
+.bold {
+  font-weight: 500;
+}
+.bolder {
+  font-weight: 700;
+}
+.pd-15 {
+  padding: 15px;
+}
+.pdLR-15 {
+  padding: 0 15px;
+}
+.mTop-3 {
+  margin-top: 3px;
+}
+.mTop-6 {
+  margin-top: 6px;
+}
+.mTop-17{
+  margin-top: 17px;
+}
+.mTop-20{
+  margin-top:20px;
+}
+.mTop-100{
+  margin-top:100px;
+}
+.textAlignCnt{
+  text-align: center;
+}
+.width100{
+  width:100%;
+}
+.whiteTxt{
+  color: white!important;
+}
+
+
+.modal-card,
+.modal-content {
+  margin: 0 0 !important; 
+  max-height: calc(100vh - 10px);
+  // max-height: calc(100vh - 160px);
+}
+.modal-header{
+   text-align: center;
+   & .close {
+      margin-top: -20px!important;
+      cursor: pointer;
+   }
+}
+.btn{
+  cursor:pointer;
+  margin-top: 5px;
+}
+
+
+// .form-control {
+//   width: 50%;
+//   border: 1px solid #ccc;
+//   padding: 10px;
+// }
+
+.control-error {
+  border: 1px solid red;
+}
+.bg-black{
+  background-color: #282c34;
+}
+
+//NAVPILL
+
+
+
+
+@media(min-width:453px){
+  #parent-container{
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+@media(min-width:713px) {
+  #parent-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@media(min-width:785px) {
+  // #parent-container{
+  //   // padding: 10px;
+  // }
+  .dogImageOrSlider{
+    width:372px;
+  }
+  img.dogImage{
+    width: 100%;
+  }
+  div.dogInfo{
+    background-color:#fff!important;
+  }
+  textarea.form-control {
+    height: 87px;
+  }
+}
+
+@media(min-width:900px) {
+ #parent-container {
+  // padding: 10px;
+   display: grid;
+   grid-template-columns: auto;
+ }
+ .super-parentContainer{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+ }
+}
+
+@media screen and (min-width:1200px){
+  .onboarding-image{
+    width: 650px;
+  }
+
+  .slick{
+    &-initialized {
+      text-align: center;
+      max-height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 10px;
+    }
+  }
+}
+
