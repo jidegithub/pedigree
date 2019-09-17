@@ -9,10 +9,18 @@ import Swiper from 'react-id-swiper';
 
   const Navigation = () => {
     const params = {
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      }
+      // navigation: {
+      //   nextEl: '.swiper-button-next',
+      //   prevEl: '.swiper-button-prev'
+      // },
+      loop: true,
+      autoplay: {
+        delay: 2000,
+      },
+      a11y: {
+        prevSlideMessage: 'Previous slide',
+        nextSlideMessage: 'Next slide',
+      },
     }
     return (
       <>

@@ -6,11 +6,32 @@ import Swiper from 'react-id-swiper';
 
  const CardList = (props) => {
 
-     return (
+    const params = {
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+        },
+        slidesPerView: 4,
+        spaceBetween: 20,
+        centeredSlides: true, 
+        loop: false,
+        autoplay: {
+        delay: 2000,
+        },
+        a11y: {
+        prevSlideMessage: 'Previous slide',
+        nextSlideMessage: 'Next slide',
+        },
+    }
+
+     return (   
          props.dogData.length ? (
         <>
             <div className="super-parentContainer">
-                <Swiper>
+                <h3>
+                    Latest 
+                </h3>
+                <Swiper {...params}>
                 {props.dogData.map((dog, i) => {
                     const { name, breed, imageLink, likesCount, gender, age, ageValue, location, comment, userName, ownerInfo, purpose, timeStamp } = dog.fields
                     // console.log(typeof(imageLink[0].url))

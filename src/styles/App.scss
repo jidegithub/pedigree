@@ -390,26 +390,15 @@ button.dogOwnerprofileToggle {
    display: grid;
    grid-template-columns: auto;
  }
- .super-parentContainer{
-   display: grid;
-   grid-template-columns: 1fr 1fr;
- }
+//  .super-parentContainer{
+//    display: grid;
+//    grid-template-columns: 1fr 1fr;
+//  }
 }
 
 @media screen and (min-width:1200px){
   .onboarding-image{
     width: 650px;
-  }
-
-  .slick{
-    &-initialized {
-      text-align: center;
-      max-height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 10px;
-    }
   }
 }
 
