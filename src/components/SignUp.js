@@ -54,7 +54,12 @@ const SignUp = ({ history }) => {
           style={{ borderRadius:'10px'}} 
           >
             Sign Up</button>
+          <p className="font12">
+            By signing up, you agree to Pedigree <a className="pinkBtnClr" href='/'>Terms of Use</a> and <a className='pinkBtnClr' href='/'>Privacy Policy</a>
+          </p> 
         </div>
+
+        
 
         <div className = "mTop-17 textAlignCnt" >
           < Link to = "/login"

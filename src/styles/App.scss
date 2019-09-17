@@ -137,6 +137,15 @@ a {
 .pinkBtnClr{
   color: $pinkish!important;
 }
+.intro-btn{
+  position: relative;
+  bottom:37px;
+  z-index: 1;
+  padding:30px;
+  background: linear-gradient(#000000,
+  #000000, );
+  
+}
 
 .add-btn{
   padding: 16px 0;
@@ -296,6 +305,9 @@ button.dogOwnerprofileToggle {
 }
 .whiteTxt{
   color: white!important;
+}
+.font12{
+  font-size:12px;
 }
 
 
