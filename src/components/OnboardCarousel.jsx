@@ -33,7 +33,7 @@ import Swiper from 'react-id-swiper';
       <div className='intro-btn'>
         <div className="linkToUserView">
           <Link to="/login"
-            className = "whiteTxt width100 button is-link" 
+            className = "pinkBtnBgClr whiteTxt width100 button is-link" 
             style = {{height: '36px', 
             borderRadius:'10px',
             fontSize: '14px'}}

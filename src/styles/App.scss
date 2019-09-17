@@ -4,6 +4,7 @@ $lightcolor-black:rgb(14, 13, 13);
 $primary-color:#E5E5E5;
 $secondary-color:#282c34;
 $pinkish: #F27130;
+$c4:#C4C4C4;
 
 //mixins
 
@@ -132,18 +133,21 @@ a {
 }
 
 .pinkBtnBgClr{
-  background-color: $pinkish;
+  background-color: $pinkish!important;
 }
 .pinkBtnClr{
   color: $pinkish!important;
 }
+.c4BtnBgClr{
+  background-color:$c4!important;
+}
 .intro-btn{
   position: relative;
-  bottom:37px;
+  bottom:178px;
   z-index: 1;
   padding:30px;
-  background: linear-gradient(#000000,
-  #000000, );
+  background: linear-gradient(#00000085,
+  #00000085, );
   
 }
 
