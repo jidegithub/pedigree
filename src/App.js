@@ -48,16 +48,27 @@ class App extends Component {
 
     return (
       <div>
-        <Hamburger />
-        <button 
-        onClick={() => app.auth().signOut()}
-        className="button"
-        >
-          Sign out</button>
+        <div className="flex-between">
+          <Hamburger />
+          <button 
+          onClick={() => app.auth().signOut()}
+          className="button"
+          >
+            Sign out
+          </button>
+        </div>
+        
 
-          <div className="tabbedNav">
+
+          {/* <div class="navbar-item">
+        <div class="buttons">
+          
+        </div>
+        </div> */}
+
+        <div className="tabbedNav">
             <nav className="navbar navbar-default navbar-static-top">
-                <ul className="nav justify-content-start">
+                <ul className="nav justify-content-space-around">
                     <li className="nav-item">
                         <NavLink to="/app" exact activeClassName="active" className="nav-link">Breed</NavLink>
                     </li>

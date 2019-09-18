@@ -7,6 +7,10 @@ $pinkish: #F27130;
 $c4:#C4C4C4;
 
 //mixins
+@mixin flex-between {
+  display:flex;
+  justify-content:space-between;
+}
 
 
 /* Set box-sizing to border-box for all elements */
@@ -108,6 +112,18 @@ a {
   height: 100vh;
 }
 
+// .swiper-slide{
+//   width:200px!important;
+// }
+
+// img.dogImage{
+  
+// }
+
+// .super-parentContainer div [style]{
+//   width:300px!important;
+// }
+
 // .linkToUserView {
 //   position: absolute;
 //   top: 80%;
@@ -149,6 +165,10 @@ a {
   background: linear-gradient(#00000085,
   #00000085, );
   
+}
+
+.hamburger{
+  padding: 11.25px 10.5px;
 }
 
 .add-btn{
@@ -260,6 +280,7 @@ button.dogOwnerprofileToggle {
   border-radius:10px;
   outline:none;
   box-shadow: 2px 2px 4px 0px rgb(169, 161, 161);
+  height:56px!important;
 }
 
 .form-control{
@@ -313,6 +334,9 @@ button.dogOwnerprofileToggle {
 .font12{
   font-size:12px;
 }
+.flex-between{
+  @include flex-between;
+}
 
 
 .modal-card,
@@ -348,7 +372,12 @@ button.dogOwnerprofileToggle {
 }
 
 //NAVPILL
-
+.nav{
+  width:100%;
+}
+.justify-content-space-around{
+  justify-content: space-around;
+}
 
 
 

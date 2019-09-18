@@ -269,6 +269,7 @@ class Modal extends Component {
                                         
                                         <div className = "container-fluid">
                                             <div className="custom-control custom-radio custom-control-inline">
+                                            <label htmlFor="exampleFormControlTextarea1">Gender:</label>
                                                 <Radio name="gender"
                                                 value={this.state.formControls.gender.value}
                                                 onChange={this.changeHandler}
@@ -278,7 +279,8 @@ class Modal extends Component {
                                                 />
                                             </div>
                                             
-                                            <div className = "custom-control custom-radio custom-control-inline" >
+                                            <div className = "custom-control custom-radio custom-control-inline">
+                                            <label htmlFor="exampleFormControlTextarea1">Purpose:</label>
                                                 <Radio name="purpose"
                                                     value={this.state.formControls.purpose.value}
                                                     onChange={this.changeHandler}

@@ -3,7 +3,8 @@ import app from "./base";
 import {NavLink} from 'react-router-dom';
 import Hamburger from './Hamburger';
 import Modal from './Modal';
-import Icons from '../Icons'
+import Icons from '../Icons';
+import '../styles/App.scss';
 
 class List extends Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class List extends Component {
 
             <div className="tabbedNav">
               <nav className="navbar navbar-default navbar-static-top">
-                  <ul className="nav justify-content-start">
+                  <ul className="nav justify-content-space-around">
                       <li className="nav-item">
                           <NavLink to="/app" exact activeClassName="active" className="nav-link">Breed</NavLink>
                       </li>
