@@ -26,7 +26,7 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-sweet-progress": "^1.1.2",
-    "swiper": "^4.5.0",
+    "swiper": "^6.5.1",
     "uuid": "^3.3.2",
     "vanilla-lazyload": "^12.0.0"
   },
